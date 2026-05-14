@@ -1,0 +1,55 @@
+{
+  "unit": "index (0-100)",
+  "source": "Based on Ramsar designation data, field observations, and regional biodiversity assessments",
+  "metrics": [
+    {
+      "id": "birds",
+      "label": "Bird Species",
+      "description": "Number of bird species observed in the TDPS basin near Lake Poopó",
+      "data": [
+        { "year": 1970, "value": 75, "description": "75 recorded bird species, 36 aquatic" },
+        { "year": 1980, "value": 72 },
+        { "year": 1990, "value": 68 },
+        { "year": 1997, "value": 60, "description": "Decline accelerates with El Niño events" },
+        { "year": 2002, "value": 55, "description": "Ramsar designation, recognizing ecological importance" },
+        { "year": 2010, "value": 40 },
+        { "year": 2015, "value": 15, "description": "Mass die-off and flight after lake desiccation" },
+        { "year": 2020, "value": 10 },
+        { "year": 2024, "value": 8 }
+      ]
+    },
+    {
+      "id": "flamingos",
+      "label": "Flamingo Population (thousands)",
+      "description": "Estimated population of Chilean, Andean, and James's flamingos",
+      "data": [
+        { "year": 1970, "value": 100 },
+        { "year": 1980, "value": 95 },
+        { "year": 1990, "value": 80 },
+        { "year": 1997, "value": 120, "description": "Aerial survey: 120,000 birds" },
+        { "year": 1999, "value": 75, "description": "Aerial survey: 75,000 birds" },
+        { "year": 2005, "value": 50 },
+        { "year": 2010, "value": 25 },
+        { "year": 2015, "value": 2, "description": "Nearly all flamingos fled or died" },
+        { "year": 2020, "value": 1 },
+        { "year": 2024, "value": 0.5 }
+      ]
+    },
+    {
+      "id": "fish",
+      "label": "Fish Viability",
+      "description": "Fish population viability index (100 = healthy ecosystem)",
+      "data": [
+        { "year": 1970, "value": 95 },
+        { "year": 1980, "value": 90 },
+        { "year": 1990, "value": 75 },
+        { "year": 2000, "value": 50, "description": "Mass pejerrey die-off near turn of century" },
+        { "year": 2005, "value": 30 },
+        { "year": 2010, "value": 15 },
+        { "year": 2015, "value": 0, "description": "Fish populations collapsed entirely" },
+        { "year": 2020, "value": 0 },
+        { "year": 2024, "value": 0 }
+      ]
+    }
+  ]
+}

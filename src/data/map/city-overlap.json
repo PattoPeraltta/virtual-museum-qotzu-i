@@ -1,0 +1,75 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Lake Poopó at peak (3,000 km²)",
+        "type": "lake-extent",
+        "areaKm2": 3000,
+        "color": "#4a90d9",
+        "description": "Lake Poopó at its historical maximum extent, approximately 3,000 km²."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-67.40, -18.35], [-66.75, -18.35], [-66.70, -18.55],
+          [-66.75, -18.80], [-66.85, -18.95], [-67.10, -19.00],
+          [-67.35, -18.90], [-67.45, -18.70], [-67.45, -18.50],
+          [-67.40, -18.35]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "New York City (783 km²)",
+        "type": "city-comparison",
+        "areaKm2": 783,
+        "color": "#e74c3c",
+        "description": "New York City covers approximately 783 km² — about one-quarter the peak area of Lake Poopó."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-67.20, -18.55], [-67.02, -18.55], [-67.02, -18.72],
+          [-67.20, -18.72], [-67.20, -18.55]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "London (1,572 km²)",
+        "type": "city-comparison",
+        "areaKm2": 1572,
+        "color": "#f39c12",
+        "description": "Greater London covers approximately 1,572 km² — about half the peak area of Lake Poopó."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-67.30, -18.45], [-66.95, -18.45], [-66.95, -18.78],
+          [-67.30, -18.78], [-67.30, -18.45]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Buenos Aires (203 km²)",
+        "type": "city-comparison",
+        "areaKm2": 203,
+        "color": "#27ae60",
+        "description": "The city of Buenos Aires covers approximately 203 km²."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-67.12, -18.60], [-67.03, -18.60], [-67.03, -18.68],
+          [-67.12, -18.68], [-67.12, -18.60]
+        ]]
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "unit": "km²",
+  "source": "Based on Pillco Zolá & Bengtsson (2006), Satgé et al. (2019), and field observations",
+  "data": [
+    { "year": 1970, "value": 2800, "label": "Stable period", "description": "Lake Poopó at near-full extent during a wet decade." },
+    { "year": 1975, "value": 2600, "label": "Slight decline" },
+    { "year": 1980, "value": 2400, "label": "Beginning of stress" },
+    { "year": 1983, "value": 1200, "label": "First major El Niño", "description": "Strong El Niño event drastically reduces water levels." },
+    { "year": 1986, "value": 2200, "label": "Partial recovery" },
+    { "year": 1990, "value": 2500, "label": "Recovery period" },
+    { "year": 1994, "value": 2300, "label": "Stable" },
+    { "year": 1997, "value": 800, "label": "Severe El Niño", "description": "1997-98 El Niño event causes dramatic water loss." },
+    { "year": 2000, "value": 2000, "label": "Quinoa boom begins", "description": "Increased water diversion for quinoa cultivation begins." },
+    { "year": 2003, "value": 1800, "label": "Declining" },
+    { "year": 2006, "value": 1500, "label": "Accelerating loss" },
+    { "year": 2009, "value": 1200, "label": "Critical decline" },
+    { "year": 2012, "value": 800, "label": "Severe shrinkage" },
+    { "year": 2014, "value": 400, "label": "Near-collapse", "description": "2014-16 El Niño begins the final desiccation." },
+    { "year": 2015, "value": 0, "label": "Complete desiccation", "description": "Lake Poopó is declared 'disappeared' by the city of Oruro in December 2015." },
+    { "year": 2018, "value": 50, "label": "Minimal return" },
+    { "year": 2020, "value": 100, "label": "Seasonal runoff" },
+    { "year": 2024, "value": 30, "label": "Continued drought", "description": "Only a few centimeters of seasonal runoff water remain." }
+  ]
+}
