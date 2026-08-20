@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { access } from "node:fs/promises";
+import { access, readFile } from "node:fs/promises";
 import test from "node:test";
 
 async function render(pathname = "/") {
@@ -36,3 +36,12 @@ test("ships the branded social preview and no starter preview", async () => {
   await assert.rejects(access(new URL("../app/_sites-preview", import.meta.url)));
 });
 
+test("ships the exact Figma display and handwriting fonts", async () => {
+  await access(new URL("../public/fonts/felt-tip-woman-w01-bold.ttf", import.meta.url));
+  await access(new URL("../public/fonts/felt-tip-woman-regular.ttf", import.meta.url));
+
+  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+  assert.match(css, /font-family: "FeltTipWomanW01-Bold"/);
+  assert.match(css, /font-family: "Felt Tip Woman"/);
+  assert.doesNotMatch(css, /Kalam/i);
+});

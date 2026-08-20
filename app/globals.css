@@ -1,5 +1,21 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "FeltTipWomanW01-Bold";
+  src: url("/fonts/felt-tip-woman-w01-bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Felt Tip Woman";
+  src: url("/fonts/felt-tip-woman-regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 :root {
   --cream: #fff3cc;
   --sand: #f2e4c9;
@@ -8,6 +24,8 @@
   --orange: #f23400;
   --ink: #243f59;
   --black: #101311;
+  --font-hand: "FeltTipWomanW01-Bold";
+  --font-hand-regular: "Felt Tip Woman";
 }
 
 * { box-sizing: border-box; }
@@ -75,6 +93,7 @@ img { display: block; max-width: 100%; }
 .comparison-story { padding: 110px max(4.4vw, 24px) 140px; color: var(--cream); background: var(--blue); }
 .comparison-story__intro { display: grid; justify-items: center; gap: 18px; max-width: 1200px; margin: 0 auto 70px; text-align: center; }
 .handwritten { margin: 0; font-family: var(--font-hand), cursive; font-size: clamp(35px, 4.8vw, 72px); font-weight: 700; line-height: 1; letter-spacing: -.03em; }
+.handwritten--regular { font-family: var(--font-hand-regular), var(--font-hand), cursive; font-weight: 400; }
 .comparison-story__intro > p:last-child { margin: 0; font-size: clamp(18px, 2vw, 27px); }
 .comparison-story > h2 { max-width: 1200px; margin: 95px auto 0; font-size: clamp(40px, 5.2vw, 78px); line-height: 1.05; text-align: center; }
 .image-compare { position: relative; max-width: 1650px; height: min(65vw, 920px); min-height: 520px; margin: 0 auto; overflow: hidden; box-shadow: 0 34px 78px rgb(0 0 0 / .34); }
@@ -336,4 +355,3 @@ img { display: block; max-width: 100%; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
-

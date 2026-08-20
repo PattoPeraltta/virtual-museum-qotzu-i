@@ -63,7 +63,7 @@ export default function Home() {
 
       <section className="comparison-story" id="story">
         <div className="comparison-story__intro">
-          <p className="handwritten">The Uru Indigenous Nation of Lake Poopó built their communities on the lake.</p>
+          <p className="handwritten handwritten--regular">The Uru Indigenous Nation of Lake Poopó built their communities on the lake.</p>
           <p>Their culture, language, sustenance, and identity were <strong>derived from the water.</strong></p>
         </div>
         <ImageCompare />
@@ -129,4 +129,3 @@ export default function Home() {
     </main>
   );
 }
-

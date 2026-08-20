@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import { Kalam, Montserrat, Wendy_One } from "next/font/google";
+import { Montserrat, Wendy_One } from "next/font/google";
 import "./globals.css";
 
 const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-body" });
-const kalam = Kalam({ subsets: ["latin"], weight: ["400", "700"], variable: "--font-hand" });
 const wendy = Wendy_One({ subsets: ["latin"], weight: "400", variable: "--font-accent" });
 
 export const metadata: Metadata = {
@@ -30,7 +29,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${montserrat.variable} ${kalam.variable} ${wendy.variable}`}>{children}</body>
+      <head>
+        <link rel="preload" href="/fonts/felt-tip-woman-w01-bold.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/felt-tip-woman-regular.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
+      </head>
+      <body className={`${montserrat.variable} ${wendy.variable}`}>{children}</body>
     </html>
   );
 }
