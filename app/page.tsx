@@ -43,22 +43,20 @@ export default function Home() {
         <div className="home-hero__wash" />
         <SiteChrome light />
         <div className="home-hero__content">
-          <p className="location-line"><strong>The Bolivian Altiplano</strong><span>·</span> 3,700 meters above sea level</p>
           <h1>URU VIRTUAL MUSEUM</h1>
+          <p className="location-line"><strong>The Bolivian Altiplano</strong><span>·</span> <strong>3,700 meters</strong> above sea level</p>
         </div>
-        <a className="scroll-cue" href="#lake"><span>↓</span> Scroll to keep reading</a>
-      </section>
-
-      <section className="lake-intro" id="lake">
-        <div className="lake-intro__copy">
-          <p className="overline overline--cream">Here once stood the <strong>second largest lake in Bolivia.</strong></p>
-          <h2>Lake Poopó</h2>
-          <p>A body of water that had existed for thousands of years, Lake Poopó was the lifeblood of the Bolivian highlands, fed by the Río Desaguadero and mountain streams.</p>
-        </div>
-        <div className="stat-stack" aria-label="Lake Poopó statistics">
-          <article><span>Surface area</span><strong>3,000 km²</strong></article>
-          <article><span>Existed for</span><strong>10,000+ yrs</strong></article>
-        </div>
+        <section className="lake-intro" id="lake">
+          <div className="lake-intro__copy">
+            <p className="overline overline--cream">Here once stood the <strong>second largest lake in Bolivia.</strong></p>
+            <h2>Lake Poopó</h2>
+            <p>A body of water that had existed for thousands of years, Lake Poopó was the lifeblood of the Bolivian highlands, fed by the Río Desaguadero and mountain streams.</p>
+          </div>
+          <div className="stat-stack" aria-label="Lake Poopó statistics">
+            <article><span>Surface area</span><strong>3,000 km²</strong></article>
+            <article><span>Existed for</span><strong>10,000+ yrs</strong></article>
+          </div>
+        </section>
       </section>
 
       <section className="comparison-story" id="story">
@@ -102,13 +100,12 @@ export default function Home() {
 
       <section className="mission">
         <img src={assets.home_imgTwoPeopleCrouching} alt="Two Uru people working together on the dry lakebed" />
-        <div className="mission__wash" />
         <div className="mission__content">
           <p>This platform exists to document</p>
-          <h2>what was lost,<br />what continues &amp;<br />how we can help</h2>
+          <h2>what was lost,<br />what continues &amp;<br />How can we help</h2>
           <div className="button-row">
             <a className="button button--orange" href="/resources">Enter the archive <span>→</span></a>
-            <a className="button button--outline-light" href="/impact#film">Discover the film</a>
+            <a className="button button--outline-light" href="/impact#film">Watch the film</a>
           </div>
         </div>
       </section>

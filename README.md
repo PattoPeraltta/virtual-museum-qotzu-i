@@ -19,3 +19,6 @@ npm run build
 npm test
 ```
 
+## Deployment
+
+The site is a native Next.js App Router project and can be deployed directly to Vercel. The production URL is derived from Vercel's project environment automatically.
