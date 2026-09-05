@@ -169,6 +169,22 @@ test("restores the seven-case Global Parallels carousel from the Figma prototype
   assert.match(css, /\.impact-carousel__dots button\.is-active::before/);
 });
 
+test("uses the seven supplied Global Parallels photographs", async () => {
+  const assets = await readFile(new URL("../src/assets.ts", import.meta.url), "utf8");
+
+  for (const image of [
+    "owens-lake.jpg",
+    "great-salt-lake.jpg",
+    "salton-sea.jpg",
+    "lake-urmia.jpg",
+    "the-aral-sea.jpg",
+    "lake-chad.jpg",
+    "rio-loa-&-the-atacama.jpg",
+  ]) {
+    assert.match(assets, new RegExp(`"/assets/figma/${image.replace(/[.*+?^${}()|[\\]\\\\]/g, "\\\\$&")}"`));
+  }
+});
+
 test("scales the Lake Poopó introduction from the 1920px Figma composition", async () => {
   const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
   assert.match(css, /\.lake-intro \{[^}]*17\.708vw[^}]*3\.333vw/);
@@ -181,6 +197,17 @@ test("scales the Lake Poopó introduction from the 1920px Figma composition", as
 test("crops the comparison images past the dry asset's dark top row", async () => {
   const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
   assert.match(css, /\.image-compare > img \{[^}]*top: -1px[^}]*height: calc\(100% \+ 2px\)/);
+});
+
+test("uses the full-resolution mining image instead of its preview export", async () => {
+  const source = await readFile(new URL("../src/assets.ts", import.meta.url), "utf8");
+  assert.match(source, /"lake_imgDji01722": "\/assets\/figma\/lake-dji01722\.jpg"/);
+});
+
+test("uses optimized high-resolution photographs for the home and Resources heroes", async () => {
+  const source = await readFile(new URL("../src/assets.ts", import.meta.url), "utf8");
+  assert.match(source, /"home_imgDsc034391": "\/assets\/figma\/home-dsc034391-high-res\.jpg"/);
+  assert.match(source, /"resources_imgDsc029081": "\/assets\/figma\/resources-dsc029081-high-res\.jpg"/);
 });
 
 test("matches the Figma mission image framing and compact three-line title", async () => {
@@ -245,13 +272,13 @@ test("keeps museum canvases and Lake feature cards contained responsively", asyn
   assert.match(css, /@media \(max-width: 1050px\) \{[\s\S]*?\.lake-metals \{[^}]*position: static[^}]*width: auto[^}]*height: auto/);
 });
 
-test("fades image-led sections into their following backgrounds", async () => {
+test("fades only the image-led sections that use a Figma transition", async () => {
   const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
 
-  for (const section of ["home-hero", "mission", "lake-hero", "lake-timeline", "about-hero", "impact-hero", "resources-hero", "about-craft", "about-resilience"]) {
+  for (const section of ["lake-hero", "lake-timeline", "about-hero", "impact-hero", "resources-hero", "about-craft", "about-resilience"]) {
     assert.match(css, new RegExp(`\\.${section}::after`));
   }
-  assert.match(css, /\.home-hero, \.mission \{ --section-fade-rgb: 36 63 89; \}/);
+  assert.doesNotMatch(css, /\.home-hero::after|\.mission::after/);
   assert.match(css, /\.about-craft \{ --section-fade-rgb: 10 11 10; \}/);
   assert.match(css, /height: clamp\(170px, 16\.6vw, 300px\)/);
   assert.match(css, /rgb\(var\(--section-fade-rgb\) \/ \.94\) 90%/);
@@ -263,6 +290,7 @@ test("aligns the Lake Poopó timeline axis with the mountain horizon", async () 
 
   assert.match(source, /const timelineAxisY = 5630/);
   assert.match(source, /"--stem-span" as string/);
+  assert.match(css, /\.lake-timeline__axis \{[^}]*right: 0; left: 0; height: 3px/);
   assert.match(css, /\.lake-timeline-card--top \.lake-timeline-card__stem \{[^}]*calc\(var\(--stem-span\) - 100%/);
   assert.match(css, /\.lake-timeline-card--bottom \.lake-timeline-card__stem \{[^}]*height: var\(--stem-span\)/);
   assert.match(css, /@media \(min-width: 1051px\) \{[\s\S]*?\.lake-timeline-card--top \{[^}]*--timeline-card-shift/);

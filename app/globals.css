@@ -265,7 +265,7 @@ img { display: block; max-width: 100%; }
 
 .lake-timeline { --lake-timeline-axis: 55.27%; position: relative; z-index: 1; min-height: clamp(560px, 80.9vw, 1460px); margin-top: clamp(-120px, -10vw, -180px); overflow: hidden; color: var(--blue); }
 .lake-timeline > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 41%; }
-.lake-timeline__axis { position: absolute; top: var(--lake-timeline-axis); right: var(--lake-gutter); left: var(--lake-gutter); height: 2px; background: rgb(255 243 204 / .85); }
+.lake-timeline__axis { position: absolute; top: var(--lake-timeline-axis); right: 0; left: 0; height: 3px; background: rgb(255 243 204 / .9); }
 .lake-timeline__cards { position: absolute; inset: 0; }
 .lake-timeline-card { position: absolute; padding: 12px; border: 1px solid rgb(255 255 255 / .78); border-radius: 12px; color: var(--blue); background: rgb(255 243 204 / .48); backdrop-filter: blur(6px); }
 .lake-timeline-card__stem { position: absolute; left: 50%; width: 0; border-left: 1px dashed rgb(255 243 204 / .85); transform: translateX(-50%); pointer-events: none; }
@@ -557,9 +557,8 @@ img { display: block; max-width: 100%; }
 .resources-hero__content > p:last-child { max-width: min(1420px, calc(100vw - var(--resources-gutter) - var(--resources-gutter))); margin: 0; font-size: clamp(16px, 1.28vw, 23px); line-height: 1.55; }
 
 .lake-hero, .lake-timeline, .about-hero, .impact-hero, .resources-hero, .about-craft, .about-resilience { --section-fade-rgb: 242 228 201; }
-.home-hero, .mission { --section-fade-rgb: 36 63 89; }
 .about-craft { --section-fade-rgb: 10 11 10; }
-.home-hero::after, .mission::after, .lake-hero::after, .lake-timeline::after, .about-hero::after, .impact-hero::after, .resources-hero::after, .about-craft::after, .about-resilience::after {
+.lake-hero::after, .lake-timeline::after, .about-hero::after, .impact-hero::after, .resources-hero::after, .about-craft::after, .about-resilience::after {
   position: absolute;
   z-index: 1;
   right: 0;

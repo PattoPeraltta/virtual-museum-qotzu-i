@@ -61,7 +61,7 @@ const globalParallels = [
     title: "Great Salt Lake",
     body: "The Great Salt Lake in Utah, the largest salt lake in the Western Hemisphere, has shrunk by two-thirds since the 1980s, driven by agricultural water diversion, primarily for alfalfa, and accelerated by climate change. The Shoshone and other Indigenous peoples of the Intermountain West have harvested salt, plants, waterfowl, and other resources from the lake for millennia, practices largely absent from mainstream conservation conversations. As the lakebed dries, it releases toxic dust containing arsenic and heavy metals that disproportionately affects communities of color and low-income neighborhoods along the Wasatch Front. Scientists have warned the lake could disappear entirely within years if current trends continue.",
     src: assets.impact_imgGreatSaltLake,
-    alt: "Satellite view of the receding Great Salt Lake in Utah",
+    alt: "Salt formations and the exposed bed of the Great Salt Lake in Utah",
     position: "center 58%",
   },
   {
@@ -69,7 +69,7 @@ const globalParallels = [
     title: "Salton Sea",
     body: "California’s Salton Sea, the state’s largest lake by surface area, has been shrinking rapidly as agricultural water agreements redirect inflows elsewhere. As the lake recedes, it exposes a lakebed laden with pesticides, heavy metals, and selenium. Toxic dust storms from the exposed playa have been directly linked to elevated rates of childhood asthma among the predominantly Latino communities of the Coachella and Imperial Valleys. Each foot of decline in lake elevation is associated with a measurable increase in harmful particulate matter in surrounding counties.",
     src: assets.impact_imgSaltonSea,
-    alt: "Satellite view of the Salton Sea and its exposed shoreline in California",
+    alt: "A person walking along the exposed shoreline of the Salton Sea in California",
     position: "center",
   },
   {
@@ -77,7 +77,7 @@ const globalParallels = [
     title: "Lake Urmia",
     body: "Lake Urmia, formerly the largest lake in the Middle East and the sixth-largest saltwater lake in the world, has lost over 90 percent of its water since the mid-1990s. The causes are a combination of climate change, dam construction on feeder rivers, and decades of politically motivated agricultural expansion. By September 2025, satellite imagery showed the lake had nearly entirely dried up. The crisis has exacerbated ethnic tensions between the local Azerbaijani population and the Iranian central government, who are accused of negligence and resource mismanagement. Salt and dust storms from the exposed lakebed now carry toxic heavy metals toward the cities of Tabriz and Urmia, threatening the health of millions, and the lake’s decline has triggered a “silent evacuation”, a mass migration from farming communities that once depended on its waters.",
     src: assets.impact_imgLakeUrmia,
-    alt: "Satellite view of the salt-covered bed of Lake Urmia in Iran",
+    alt: "A stranded ship on the salt-covered bed of Lake Urmia in Iran",
     position: "center 54%",
   },
   {
@@ -85,7 +85,7 @@ const globalParallels = [
     title: "The Aral Sea",
     body: "The Aral Sea, once the fourth-largest lake in the world at 68,000 square kilometers, began shrinking in the 1960s when Soviet irrigation projects diverted its two feeder rivers, the Amu Darya and Syr Darya, to grow cotton in the surrounding desert. By 2007 it had lost over 90 percent of its area. The Karakalpak people of the autonomous region of Karakalpakstan in Uzbekistan bore the worst of the consequences: fisheries that once employed 40,000 to 60,000 people collapsed entirely, arable land salinized, and toxic dust storms carrying pesticide residue spread across the region. The storms caused severe respiratory illness, elevated infant mortality, and the mass displacement of an estimated 100,000 to 700,000 people. Kazakhstan has partially revived the Northern Aral Sea with a dam and World Bank assistance; the southern portion in Uzbekistan remains a desert, as the government pursues oil and gas extraction from the former lakebed.",
     src: assets.impact_imgAralSea,
-    alt: "The fragmented waters and exposed bed of the Aral Sea seen from orbit",
+    alt: "Abandoned fishing boats on the exposed bed of the Aral Sea",
     position: "center 58%",
   },
   {
@@ -93,7 +93,7 @@ const globalParallels = [
     title: "Lake Chad",
     body: "Lake Chad, once one of Africa’s largest lakes, shrank by approximately 90 percent between the 1960s and 1990s due to drought and increasing agricultural demand, before partially stabilizing. More than 30 million people across Cameroon, Chad, Niger, and Nigeria depend on the lake for food, water, and economic activity. The Mbororo pastoralists and dozens of other indigenous and farming communities have seen their livelihoods destroyed, their lands desertified, and their communities displaced, with over 5 million people uprooted across the broader Lake Chad Basin. Researchers have linked climate-driven resource scarcity around the lake to rising intercommunal conflict and the conditions that facilitated the rise of armed extremist groups in the Sahel.",
     src: assets.impact_imgLakeChad,
-    alt: "Lake Chad and its surrounding wetlands seen from orbit",
+    alt: "The exposed dry bed of Lake Chad in the Sahel",
     position: "center 44%",
   },
   {
