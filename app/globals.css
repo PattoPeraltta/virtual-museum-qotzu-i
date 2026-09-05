@@ -237,6 +237,21 @@ img { display: block; max-width: 100%; }
 }
 
 .lake-facts-science { position: relative; z-index: 2; background: #426b94; color: var(--cream); }
+.lake-facts-science::after {
+  position: absolute;
+  z-index: 3;
+  right: 0;
+  bottom: calc(-1 * clamp(90px, 8.3vw, 150px));
+  left: 0;
+  height: clamp(180px, 16.6vw, 300px);
+  background: linear-gradient(180deg, transparent 0%, rgb(158 191 202 / .48) 22%, rgb(158 191 202 / .9) 50%, rgb(158 191 202 / .64) 72%, transparent 100%);
+  -webkit-backdrop-filter: blur(clamp(12px, 1.2vw, 22px));
+  backdrop-filter: blur(clamp(12px, 1.2vw, 22px));
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 22%, #000 78%, transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0%, #000 22%, #000 78%, transparent 100%);
+  content: "";
+  pointer-events: none;
+}
 .lake-keyfacts__layout { display: grid; grid-template-columns: min(20.68vw, 373px) minmax(0, 1fr); gap: min(2.66vw, 48px); align-items: start; width: var(--lake-w); margin: 0 auto; padding: clamp(110px, 9.1vw, 165px) var(--lake-gutter) clamp(48px, 4vw, 72px); }
 .lake-stat-stack { display: grid; gap: clamp(28px, 2.4vw, 43px); }
 .lake-stat-stack > .lake-label { margin-bottom: 8px; }

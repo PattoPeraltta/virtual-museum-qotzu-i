@@ -284,6 +284,15 @@ test("fades only the image-led sections that use a Figma transition", async () =
   assert.match(css, /rgb\(var\(--section-fade-rgb\) \/ \.94\) 90%/);
 });
 
+test("softens the seam between the depth chart and Lake Poopó timeline", async () => {
+  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+
+  assert.match(css, /\.lake-facts-science::after \{[^}]*bottom: calc\(-1 \* clamp\(90px, 8\.3vw, 150px\)\)[^}]*height: clamp\(180px, 16\.6vw, 300px\)/);
+  assert.match(css, /\.lake-facts-science::after \{[^}]*background: linear-gradient\(180deg,[^}]*rgb\(158 191 202 \/ \.9\) 50%/);
+  assert.match(css, /\.lake-facts-science::after \{[^}]*-webkit-backdrop-filter: blur\(clamp\(12px, 1\.2vw, 22px\)\)[^}]*backdrop-filter: blur\(clamp\(12px, 1\.2vw, 22px\)\)/);
+  assert.match(css, /\.lake-facts-science::after \{[^}]*mask-image: linear-gradient\(180deg, transparent 0%, #000 22%, #000 78%, transparent 100%\)/);
+});
+
 test("aligns the Lake Poopó timeline axis with the mountain horizon", async () => {
   const source = await readFile(new URL("../app/lake-poopo/page.tsx", import.meta.url), "utf8");
   const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
