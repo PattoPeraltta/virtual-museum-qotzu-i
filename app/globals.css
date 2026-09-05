@@ -236,7 +236,7 @@ img { display: block; max-width: 100%; }
   .lake-map-card:nth-child(2)::after { top: 52%; width: min(30.5vw, 550px); }
 }
 
-.lake-facts-science { position: relative; z-index: 2; background: #426b94; color: var(--cream); }
+.lake-facts-science { --lake-timeline-sky: 174 200 206; position: relative; z-index: 2; background: #426b94; color: var(--cream); }
 .lake-facts-science::after {
   position: absolute;
   z-index: 3;
@@ -244,7 +244,7 @@ img { display: block; max-width: 100%; }
   bottom: calc(-1 * clamp(90px, 8.3vw, 150px));
   left: 0;
   height: clamp(180px, 16.6vw, 300px);
-  background: linear-gradient(180deg, transparent 0%, rgb(158 191 202 / .48) 22%, rgb(158 191 202 / .9) 50%, rgb(158 191 202 / .64) 72%, transparent 100%);
+  background: linear-gradient(180deg, transparent 0%, rgb(var(--lake-timeline-sky) / .48) 22%, rgb(var(--lake-timeline-sky) / .9) 50%, rgb(var(--lake-timeline-sky) / .64) 72%, transparent 100%);
   -webkit-backdrop-filter: blur(clamp(12px, 1.2vw, 22px));
   backdrop-filter: blur(clamp(12px, 1.2vw, 22px));
   -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 22%, #000 78%, transparent 100%);
@@ -261,7 +261,7 @@ img { display: block; max-width: 100%; }
 .lake-stat-stack strong { font-family: var(--font-hand), cursive; font-size: clamp(34px, 2.9vw, 52px); font-weight: 700; line-height: 1; color: #f2e4c9; }
 .lake-keyfacts__photo { width: 100%; max-width: 100%; margin-top: clamp(24px, 2.27vw, 41px); aspect-ratio: 1215 / 777; object-fit: cover; object-position: center 40%; }
 
-.lake-science__band { width: var(--lake-w); margin: 0 auto; padding: clamp(36px, 3vw, 52px) var(--lake-gutter) clamp(72px, 6vw, 110px); background: linear-gradient(180deg, #426b94 0, #4a749c 8%, #6a9ec4 62%, #9ebfca 100%); }
+.lake-science__band { width: var(--lake-w); margin: 0 auto; padding: clamp(36px, 3vw, 52px) var(--lake-gutter) clamp(72px, 6vw, 110px); background: linear-gradient(180deg, #426b94 0, #4a749c 8%, #6a9ec4 62%, rgb(var(--lake-timeline-sky)) 100%); }
 .lake-science__band > .lake-label { margin-bottom: 18px; }
 .lake-science__band > h2 { margin-bottom: clamp(28px, 2.5vw, 45px); color: var(--cream); }
 .lake-science__band > .lake-columns { margin-bottom: clamp(36px, 3vw, 52px); }
@@ -721,6 +721,7 @@ img { display: block; max-width: 100%; }
 
 @media (max-width: 1050px) {
   .lake-page { --lake-w: 100%; --lake-gutter: 42px; }
+  .lake-facts-science { --lake-timeline-sky: 133 179 200; }
   .lake-section { margin: 0 auto; padding-right: 42px; padding-left: 42px; }
   .lake-hero { width: 100%; min-height: 900px; }
   .lake-hero > img { top: 0; width: 100%; height: 100%; }

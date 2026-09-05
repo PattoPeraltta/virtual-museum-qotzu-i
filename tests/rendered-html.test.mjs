@@ -287,10 +287,13 @@ test("fades only the image-led sections that use a Figma transition", async () =
 test("softens the seam between the depth chart and Lake Poopó timeline", async () => {
   const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
 
+  assert.match(css, /\.lake-facts-science \{[^}]*--lake-timeline-sky: 174 200 206/);
   assert.match(css, /\.lake-facts-science::after \{[^}]*bottom: calc\(-1 \* clamp\(90px, 8\.3vw, 150px\)\)[^}]*height: clamp\(180px, 16\.6vw, 300px\)/);
-  assert.match(css, /\.lake-facts-science::after \{[^}]*background: linear-gradient\(180deg,[^}]*rgb\(158 191 202 \/ \.9\) 50%/);
+  assert.match(css, /\.lake-facts-science::after \{[^}]*background: linear-gradient\(180deg,[^}]*rgb\(var\(--lake-timeline-sky\) \/ \.9\) 50%/);
   assert.match(css, /\.lake-facts-science::after \{[^}]*-webkit-backdrop-filter: blur\(clamp\(12px, 1\.2vw, 22px\)\)[^}]*backdrop-filter: blur\(clamp\(12px, 1\.2vw, 22px\)\)/);
   assert.match(css, /\.lake-facts-science::after \{[^}]*mask-image: linear-gradient\(180deg, transparent 0%, #000 22%, #000 78%, transparent 100%\)/);
+  assert.match(css, /\.lake-science__band \{[^}]*rgb\(var\(--lake-timeline-sky\)\) 100%/);
+  assert.match(css, /@media \(max-width: 1050px\) \{[\s\S]*?\.lake-facts-science \{ --lake-timeline-sky: 133 179 200; \}/);
 });
 
 test("aligns the Lake Poopó timeline axis with the mountain horizon", async () => {
