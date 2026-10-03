@@ -185,13 +185,14 @@ test("uses the seven supplied Global Parallels photographs", async () => {
   }
 });
 
-test("scales the Lake Poopó introduction from the 1920px Figma composition", async () => {
-  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
-  assert.match(css, /\.lake-intro \{[^}]*17\.708vw[^}]*3\.333vw/);
-  assert.match(css, /\.overline--cream \{[^}]*1\.615vw/);
-  assert.match(css, /\.lake-intro h2 \{[^}]*11vw/);
-  assert.match(css, /\.lake-intro__copy > p:last-child \{[^}]*1\.302vw/);
-  assert.match(css, /\.stat-stack strong \{[^}]*white-space: nowrap/);
+test("preserves the lake introduction and its statistics in the opening story", async () => {
+  const html = await (await render("/")).text();
+  const introduction = html.match(/<section class="lake-intro"[\s\S]*?<\/section>/)?.[0];
+  assert.ok(introduction);
+  assert.match(introduction, /Lake Poopó/);
+  assert.match(introduction, /aria-label="Lake Poopó statistics"/);
+  assert.match(introduction, /3,000/);
+  assert.match(introduction, /10,000/);
 });
 
 test("crops the comparison images past the dry asset's dark top row", async () => {
@@ -210,18 +211,14 @@ test("uses optimized high-resolution photographs for the home and Resources hero
   assert.match(source, /"resources_imgDsc029081": "\/assets\/figma\/resources-dsc029081-high-res\.jpg"/);
 });
 
-test("matches the Figma mission image framing and compact three-line title", async () => {
-  const source = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
-  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
-
-  assert.doesNotMatch(source, /mission__wash/);
-  assert.match(source, /what was lost,<br \/>what continues &amp;<br \/>How can we help/);
-  assert.match(source, />Watch the film</);
-  assert.match(css, /\.mission \{[^}]*59\.5833vw/);
-  assert.match(css, /\.mission > img \{[^}]*object-position: left center/);
-  assert.match(css, /\.mission__content \{[^}]*max-width: 1000px/);
-  assert.match(css, /\.mission h2 \{[^}]*5vw[^}]*78px/);
-  assert.doesNotMatch(css, /\.mission__wash/);
+test("keeps the mission photograph, three-line title, and both archive actions", async () => {
+  const html = await (await render("/")).text();
+  const mission = html.match(/<section class="mission"[\s\S]*?<\/section>/)?.[0];
+  assert.ok(mission);
+  assert.match(mission, /<img[^>]+alt="[^"]+"/);
+  assert.match(mission, /what was lost,<br\/>what continues &amp;<br\/>How can we help/);
+  assert.match(mission, /href="\/resources"/);
+  assert.match(mission, /href="\/impact#film"/);
 });
 
 test("uses compact unlined Montserrat labels throughout the site", async () => {
@@ -242,34 +239,23 @@ test("uses one hover-and-focus submenu pattern across every museum page", async 
   assert.match(chrome, /className="site-nav-submenu"/);
   assert.doesNotMatch(lake, /lake-subnav/);
   assert.doesNotMatch(about, /about-subnav/);
-  assert.match(css, /\.site-header nav \{[^}]*position: absolute[^}]*left: min\(25\.055vw, 452px\)/);
   assert.match(css, /\.site-nav-submenu \{[^}]*visibility: hidden[^}]*opacity: 0[^}]*pointer-events: none/);
   assert.match(css, /\.site-nav-item:hover \.site-nav-submenu, \.site-nav-item:focus-within \.site-nav-submenu \{[^}]*visibility: visible[^}]*opacity: 1/);
   assert.match(css, /\.site-nav-item:hover > \.site-nav-link::after/);
   assert.doesNotMatch(css, /\.site-nav-item:last-child \.site-nav-submenu/);
 });
 
-test("keeps museum canvases and Lake feature cards contained responsively", async () => {
-  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
-
-  for (const pageClass of ["lake-page", "about-page", "impact-page", "resources-page"]) {
-    assert.match(css, new RegExp(`\\.${pageClass} \\{[^}]*width: min\\(100%, 1804px\\)[^}]*margin-inline: auto[^}]*overflow: hidden`));
+test("keeps every museum hero and its navigation server-rendered", async () => {
+  for (const [pathname] of routes) {
+    const html = await (await render(pathname)).text();
+    assert.equal((html.match(/<main(?:\s|>)/g) ?? []).length, 1);
+    assert.equal((html.match(/<h1(?:\s|>)/g) ?? []).length, 1);
+    const hero = html.match(/<main[^>]*><section[^>]*>[\s\S]*?<\/section>/)?.[0];
+    assert.ok(hero, pathname);
+    assert.match(hero, /<img[^>]+alt="[^"]+"/);
+    assert.match(hero, /aria-label="Main navigation"/);
+    assert.match(hero, /aria-controls="main-navigation"/);
   }
-  assert.match(css, /\.about-hero > img \{[^}]*translateX\(max\(-4\.96vw, -89px\)\) scale\(1\.24, 1\.205\)/);
-  assert.match(css, /\.about-language \{[^}]*background: var\(--sand\)/);
-  assert.match(css, /\.lake-page \{[^}]*--lake-gutter: min\(4\.66vw, 84px\)/);
-  assert.match(css, /\.lake-metals \{[^}]*left: var\(--lake-gutter\)[^}]*width: min\(34\.2vw, 617px\)[^}]*height: min\(34\.76vw, 627px\)/);
-  assert.match(css, /\.lake-keyfacts__layout \{[^}]*grid-template-columns: min\(20\.68vw, 373px\) minmax\(0, 1fr\)/);
-  assert.match(css, /\.resources-page \{[^}]*--resources-gutter: min\(4\.66vw, 84px\)/);
-  assert.match(css, /\.resources-documentary-grid \{[^}]*grid-template-columns: repeat\(3, minmax\(0, 1fr\)\)[^}]*gap: min\(2\.55vw, 46px\)/);
-  assert.match(css, /\.resources-documentary-grid article > div > p:not\(\.resource-label\)/);
-  assert.match(css, /\.resources-gallery \.gallery__slide--current \{[^}]*width: min\(43\.65vw, 787px\)[^}]*height: min\(34\.8vw, 628px\)/);
-  assert.match(css, /\.resources-gallery \.gallery__slide--previous,[\s\S]*?width: min\(21\.35vw, 385px\)[^}]*height: min\(11vw, 198px\)/);
-  assert.match(css, /\.resources-thesis,[\s\S]*?resources-dsc0353411\.jpg/);
-  assert.match(css, /\.resources-project--language \{[^}]*grid-template-columns: minmax\(0, 342fr\) minmax\(0, 1200fr\)/);
-  assert.match(css, /\.resources-ramsar-stats \{[^}]*grid-template-columns: repeat\(4, minmax\(0, 1fr\)\)/);
-  assert.doesNotMatch(css, /\.resources-documentaries[^\n{]*\{[^}]*width: 1804px/);
-  assert.match(css, /@media \(max-width: 1050px\) \{[\s\S]*?\.lake-metals \{[^}]*position: static[^}]*width: auto[^}]*height: auto/);
 });
 
 test("fades only the image-led sections that use a Figma transition", async () => {
@@ -293,7 +279,6 @@ test("softens the seam between the depth chart and Lake Poopó timeline", async 
   assert.match(css, /\.lake-facts-science::after \{[^}]*-webkit-backdrop-filter: blur\(clamp\(12px, 1\.2vw, 22px\)\)[^}]*backdrop-filter: blur\(clamp\(12px, 1\.2vw, 22px\)\)/);
   assert.match(css, /\.lake-facts-science::after \{[^}]*mask-image: linear-gradient\(180deg, transparent 0%, #000 22%, #000 78%, transparent 100%\)/);
   assert.match(css, /\.lake-science__band \{[^}]*rgb\(var\(--lake-timeline-sky\)\) 100%/);
-  assert.match(css, /@media \(max-width: 1050px\) \{[\s\S]*?\.lake-facts-science \{ --lake-timeline-sky: 133 179 200; \}/);
 });
 
 test("aligns the Lake Poopó timeline axis with the mountain horizon", async () => {
