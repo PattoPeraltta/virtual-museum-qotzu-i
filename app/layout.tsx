@@ -9,7 +9,12 @@ export const metadata: Metadata = {
   title: "Uru Virtual Museum | Qotzuñi",
   description: "A virtual museum documenting Lake Poopó, the Uru Indigenous Nation, and the Qotzuñi impact project.",
   icons: {
-    icon: "/assets/figma/home-group259.svg",
+    icon: [
+      { url: "/favicon.ico", sizes: "16x16 32x32 48x48", type: "image/x-icon" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-192x192.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
   },
   openGraph: {
     title: "Uru Virtual Museum | Qotzuñi",
