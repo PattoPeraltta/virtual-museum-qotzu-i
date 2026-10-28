@@ -564,6 +564,23 @@ img { display: block; max-width: 100%; }
 .impact-carousel__controls button { display: grid; width: 34px; height: 34px; padding: 0; border: 0; border-radius: 50%; place-items: center; color: inherit; background: transparent; cursor: pointer; transition: color .2s ease, background .2s ease; }
 .impact-carousel__controls button:hover, .impact-carousel__controls button:focus-visible { color: var(--blue); background: var(--cream); outline: none; }
 .impact-carousel__controls span { min-width: 60px; text-align: center; font-size: 9px; font-weight: 600; letter-spacing: .15em; }
+.impact-locator { position: absolute; z-index: 2; right: min(1.66vw, 30px); bottom: calc(min(1.66vw, 30px) + 56px); display: grid; gap: 12px; width: min(21vw, 340px); padding: clamp(16px, 1.1vw, 20px); border: 1px solid rgb(255 243 204 / .55); border-radius: min(.72vw, 13px); color: var(--cream); background: rgb(53 77 95 / .55); backdrop-filter: blur(16px); pointer-events: none; }
+.impact-locator__label { display: flex; gap: 10px; align-items: center; margin: 0; text-transform: uppercase; font-size: 10px; font-weight: 700; letter-spacing: .14em; animation: impact-locator-text-in .42s .06s ease both; }
+.impact-locator__label::before { width: 6px; height: 6px; border-radius: 50%; background: var(--orange); content: ""; flex: none; }
+.impact-locator__map { overflow: hidden; aspect-ratio: 16 / 10; border: 1px solid rgb(255 243 204 / .16); border-radius: 8px; background: rgb(16 19 17 / .24); }
+.impact-locator__map svg { display: block; width: 100%; height: 100%; }
+.impact-locator__pan { transition: transform .9s cubic-bezier(.22, .65, .26, 1); }
+.impact-locator__map image { opacity: .42; }
+.impact-locator__graticule line { stroke: rgb(255 243 204 / .1); stroke-width: .25; }
+.impact-locator__site { fill: none; stroke: rgb(255 243 204 / .75); stroke-width: .4; }
+.impact-locator__arc { fill: none; stroke: rgb(255 243 204 / .7); stroke-width: .4; stroke-dasharray: 1 1.2; stroke-linecap: round; animation: impact-locator-fade-in .6s .35s ease both; }
+.impact-locator__home circle { fill: var(--cream); stroke: var(--blue); stroke-width: .5; }
+.impact-locator__home text { fill: var(--cream); font-family: var(--font-body), sans-serif; font-size: 2.6px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; paint-order: stroke; stroke: rgb(36 63 89 / .7); stroke-width: .6px; }
+.impact-locator__pin circle { fill: var(--orange); stroke: var(--cream); stroke-width: .45; }
+.impact-locator__pin .impact-locator__pulse { fill: rgb(242 52 0 / .55); stroke: none; transform-box: fill-box; transform-origin: center; animation: impact-locator-pulse 2.2s .9s ease-out infinite; }
+@keyframes impact-locator-pulse { from { opacity: 1; transform: scale(1); } to { opacity: 0; transform: scale(4.2); } }
+@keyframes impact-locator-fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes impact-locator-text-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
 .impact-carousel[data-direction="previous"] .impact-carousel__image { animation-name: impact-carousel-image-in-previous; }
 .impact-carousel[data-direction="previous"] figcaption { animation-name: impact-carousel-caption-in-previous; }
 @keyframes impact-carousel-image-in { from { opacity: .68; transform: scale(1.025) translateX(1.2%); } to { opacity: 1; transform: scale(1) translateX(0); } }
@@ -897,6 +914,22 @@ img { display: block; max-width: 100%; }
   .impact-owens { min-height: 960px; }
   .impact-owens figcaption { max-height: none; overflow: visible; }
   .impact-owens figcaption > p:last-child { font-size: 13px; line-height: 1.46; text-align: left; }
+}
+
+@media (max-width: 1280px) {
+  .impact-carousel__image { position: absolute; inset: 0; }
+  .impact-locator { top: 24px; right: 24px; bottom: auto; width: min(36vw, 300px); }
+}
+@media (max-width: 800px) {
+  .impact-owens { display: flex; flex-direction: column; gap: 16px; padding: 64px 24px 76px; }
+  .impact-owens figcaption, .impact-locator { position: relative; inset: auto; width: auto; }
+  .impact-owens figcaption { max-height: none; margin-top: auto; overflow: visible; }
+  .impact-locator { order: -1; grid-template-columns: minmax(0, 132px) 1fr; align-items: center; gap: 16px; padding: 12px; }
+  .impact-locator__map { order: -1; }
+}
+@media (max-width: 560px) {
+  .impact-locator { grid-template-columns: minmax(0, 116px) 1fr; gap: 12px; }
+  .impact-locator__label { gap: 8px; font-size: 9px; letter-spacing: .1em; white-space: nowrap; }
 }
 
 @media (prefers-reduced-motion: reduce) {
