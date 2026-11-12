@@ -256,7 +256,8 @@ test("keeps every museum hero and its navigation server-rendered", async () => {
     assert.ok(hero, pathname);
     assert.match(hero, /<img[^>]+alt="[^"]+"/);
     assert.match(hero, /aria-label="Main navigation"/);
-    assert.match(hero, /aria-controls="main-navigation"/);
+    assert.match(hero, /aria-controls="mobile-navigation"/);
+    assert.match(hero, /id="mobile-navigation" role="dialog" aria-modal="true"/);
   }
 });
 
