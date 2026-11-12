@@ -20,13 +20,13 @@ export const metadata: Metadata = {
     title: "Uru Virtual Museum | Qotzuñi",
     description: "Lake Poopó, the Uru Indigenous Nation, and a culture adapting after the water disappeared.",
     type: "website",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Uru Virtual Museum — Lake Poopó · Qotzuñi" }],
+    images: [{ url: "/og.jpg", width: 1200, height: 630, type: "image/jpeg", alt: "Uru Virtual Museum — portrait of an Uru man in a woven straw hat on the dry bed of Lake Poopó" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Uru Virtual Museum | Qotzuñi",
     description: "Lake Poopó, the Uru Indigenous Nation, and a culture adapting after the water disappeared.",
-    images: ["/og.png"],
+    images: ["/og.jpg"],
   },
 };
 

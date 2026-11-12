@@ -73,7 +73,7 @@ for (const [pathname, expected] of routes) {
 }
 
 test("ships the branded social preview and no starter preview", async () => {
-  await access(new URL("../public/og.png", import.meta.url));
+  await access(new URL("../public/og.jpg", import.meta.url));
   await assert.rejects(access(new URL("../app/_sites-preview", import.meta.url)));
 });
 
