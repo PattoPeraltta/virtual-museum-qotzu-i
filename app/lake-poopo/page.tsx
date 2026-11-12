@@ -34,6 +34,10 @@ const timeline = [
   { year: "2015", title: "Complete Desiccation", body: "Lake Poopó is declared disappeared. The Uru communities lose their primary source of subsistence.", x: 1415, y: 5808, w: 331, anchor: "bottom" as const, accent: true },
 ];
 
+const chronologicalRank = new Map(
+  [...timeline].sort((a, b) => parseInt(a.year) - parseInt(b.year)).map((entry, rank) => [entry.year, rank]),
+);
+
 const timelineOriginY = 4823;
 const timelineHeight = 1460;
 const timelineAxisY = 5630;
@@ -204,6 +208,7 @@ export default function LakePoopoPage() {
                 left: `${(entry.x / 1804) * 100}%`,
                 top: `${((entry.y - timelineOriginY) / timelineHeight) * 100}%`,
                 width: `${(entry.w / 1804) * 100}%`,
+                order: chronologicalRank.get(entry.year),
                 ["--stem-span" as string]: `min(${(Math.abs(entry.y - timelineAxisY) / 1804) * 100}vw, ${Math.abs(entry.y - timelineAxisY)}px)`,
               }}
             >

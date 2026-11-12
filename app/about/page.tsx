@@ -60,7 +60,7 @@ export default function AboutPage() {
               traditional Uru language. Although <strong>Chholo had gone entirely extinct</strong>, a related Uru language, <strong>Pukina</strong>,
               continued to thrive in <strong>Chipaya</strong>, a large community of non-Qotzuñi Urus. Some scholars compare the
               relationship between Chholo and Pukina to that of Spanish and French, though others believe the two were
-              much closer. Choque, traveling frequently between <strong>Puñaca Tinta María and Chipaya</strong>, developed the
+              much closer. Choque, traveling frequently between <strong>Puñaca Tinta María and Chipaya</strong>, developed the{" "}
               <strong>educational cooperative</strong> that brings Uru-language <strong>teachers from Chipaya to the Uru communities of Lake
               Poopó</strong> to teach Pukina to young students. <strong>Students in these communities continue to learn basic Pukina to
               this day.</strong>
@@ -145,7 +145,7 @@ export default function AboutPage() {
               governance. Center-right President <strong>Rodrigo Paz</strong> took office, backed by a pro-market
               supermajority in the legislature. The new administration has moved swiftly to attract foreign private
               investment into the mining sector, signaling a dramatic shift in Bolivia&apos;s extractive economy. Former
-              president <strong>Arce was arrested on corruption</strong> charges the following month; former president
+              president <strong>Arce was arrested on corruption</strong> charges the following month; former president{" "}
               <strong>Morales remains in his rural stronghold</strong>, facing separate legal proceedings.
             </p>
           </div>
@@ -153,9 +153,9 @@ export default function AboutPage() {
           <img src={assets.about_imgDsc033581} alt="An Uru community member sitting on the dry lakebed" />
           <div className="about-prose">
             <p>
-              The Paz government&apos;s embrace of private mining capital — particularly in tin, silver, zinc, and
+              The Paz government&apos;s embrace of private mining capital — particularly in tin, silver, zinc, and{" "}
               <strong>lithium</strong> — has been celebrated by international investors but raises serious concerns for
-              communities like the Urus del Lago Poopó. Private mining operations in Bolivia have historically been
+              communities like the Urus del Lago Poopó. Private mining operations in Bolivia have historically been{" "}
               <strong>less accountable than state ones</strong>, and the new administration has shown little indication
               that environmental regulation and indigenous community consultation will be prioritized alongside
               investment incentives.
@@ -166,7 +166,7 @@ export default function AboutPage() {
               Central. With <strong>437 mining concessions registered around Lake Poopó</strong> alone, cooperative mines
               are a primary source of the <strong>arsenic, heavy metals, and chemical leachate</strong> that have
               contaminated the lake&apos;s feeder streams for decades. With the loss of the lake and its fisheries, mining
-              cooperatives have paradoxically also become <strong>one of the only remaining sources of employment</strong>
+              cooperatives have paradoxically also become <strong>one of the only remaining sources of employment</strong>{" "}
               for Uru community members — a cruel dynamic in which the communities most harmed by mining are also most
               dependent on it.
             </p>

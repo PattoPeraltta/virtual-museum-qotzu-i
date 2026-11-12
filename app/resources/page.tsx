@@ -176,7 +176,7 @@ export default function ResourcesPage() {
         <article className="resources-project resources-project--language">
           <div>
             <ResourceLabel>4E.i&nbsp;&nbsp; Language Project</ResourceLabel>
-            <h2>Reviving Pukina: The<br />Chipaya-Uru Language<br />Cooperative</h2>
+            <h2>Reviving Pukina: The <br />Chipaya-Uru Language <br />Cooperative</h2>
             <p>The Chipaya educational cooperative, developed by Uru authority Daniel Mauricio Choque, brings Pukina language teachers from Chipaya to the Uru communities of Lake Poopó to teach the language to young students.</p>
           </div>
           <img src={assets.resources_imgDsc037601} alt="An Uru community member" />
