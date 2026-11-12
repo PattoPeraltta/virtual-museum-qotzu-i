@@ -98,7 +98,7 @@ export default function ImpactPage() {
             <strong>3 / 3</strong>
             <span>Unanimous consensus across the three Uru communities of Lake Poopó, secured by signed contracts of reciprocity.</span>
           </div>
-          <a className="button button--dark" href="mailto:contact@qotzuni.com">Support the Campaign <span aria-hidden="true">→</span></a>
+          <a className="button button--dark" href="https://donorbox.org/qotzuni-people-of-the-lake-1" target="_blank" rel="noopener noreferrer">Support the Campaign <span aria-hidden="true">→</span></a>
         </div>
         <img src={assets.impact_imgDsc03788} alt="Uru families gathered outside a traditional building" />
       </section>

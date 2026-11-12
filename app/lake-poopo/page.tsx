@@ -17,7 +17,7 @@ const keyFacts = [
 const mapOverlayCards = [
   { label: "First water source", value: "Lake Titicaca", sub: null, variant: "glass" as const, left: 3.06, top: 11.02, width: 22.8 },
   { label: "Primary inflow", value: "Desaguadero", sub: "River from Lake Titicaca", variant: "glass" as const, left: 3.06, top: 45.07, width: 22.8 },
-  { label: "Salinity level riser", value: "Salares", sub: null, variant: "glass" as const, left: 3.06, top: 82.71, width: 22.8 },
+  { label: "Terminus", value: "Salar de Coipasa", sub: null, variant: "glass" as const, left: 3.06, top: 82.71, width: 22.8 },
   { label: "Basin name", value: "TDPS", sub: "Titicaca · Desaguadero · Poopó · Salares", variant: "glass" as const, large: true, left: 60.21, top: 3.9, width: 36.61 },
   { label: "Seasonal flow", value: "Nov–Apr", sub: "Mountain streams highly seasonal", variant: "glass" as const, left: 78.3, top: 25.86, width: 18.53 },
   { label: "Civilizations sustained", value: "Tiwanaku · Inca", sub: "Complex irrigation systems engineered", variant: "glass" as const, left: 78.3, top: 40.02, width: 18.52 },

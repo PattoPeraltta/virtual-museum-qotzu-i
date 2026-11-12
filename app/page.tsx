@@ -61,7 +61,7 @@ export default function Home() {
 
       <section className="comparison-story" id="story">
         <div className="comparison-story__intro">
-          <p className="handwritten handwritten--regular">The Uru Indigenous Nation of Lake Poopó built their communities on the lake.</p>
+          <p className="statement statement--light">The Uru Indigenous Nation of Lake Poopó built their communities on the lake.</p>
           <p>Their culture, language, sustenance, and identity were <strong>derived from the water.</strong></p>
         </div>
         <ImageCompare />
@@ -69,7 +69,7 @@ export default function Home() {
       </section>
 
       <section className="causes" id="causes">
-        <p className="handwritten causes__title">What happened to Lake Poopó?</p>
+        <p className="statement causes__title">What happened to Lake Poopó?</p>
         {causes.map((cause, index) => (
           <article className="cause-card" data-reverse={index % 2 === 1} key={cause.number}>
             <div className="cause-card__image">
@@ -83,13 +83,12 @@ export default function Home() {
             </div>
           </article>
         ))}
-        <p className="accountability handwritten">No single actor was held responsible.</p>
+        <p className="accountability statement">No single actor was held responsible.</p>
         <div className="orange-rule" />
       </section>
 
       <section className="remain">
-        <p className="accent-word">But...</p>
-        <h2>THE URUS REMAIN</h2>
+        <h2>Resilience</h2>
         <div className="remain__portraits">
           <figure><img src={assets.home_imgUruQotzuniElder} alt="An Uru elder" /></figure>
           <figure><img src={assets.home_imgUruQotzuniWomanByAnAdobeWall} alt="An Uru woman standing beside an adobe wall" /></figure>
@@ -102,7 +101,7 @@ export default function Home() {
         <img src={assets.home_imgTwoPeopleCrouching} alt="Two Uru people working together on the dry lakebed" />
         <div className="mission__content">
           <p>This platform exists to document</p>
-          <h2>what was lost,<br />what continues &amp;<br />How can we help</h2>
+          <h2>What was lost,<br />what continues &amp;<br />how can we help</h2>
           <div className="button-row">
             <a className="button button--orange" href="/resources">Enter the archive <span>→</span></a>
             <a className="button button--outline-light" href="/impact#film">Watch the film</a>

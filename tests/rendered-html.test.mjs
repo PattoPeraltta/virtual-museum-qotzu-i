@@ -93,7 +93,9 @@ test("ships the exact Figma display and handwriting fonts", async () => {
   assert.match(layout, /wendy-one-latin-400\.woff2/);
   assert.doesNotMatch(layout, /next\/font\/google/);
   assert.match(css, /\.global-lakes \.metric-grid span \{[^}]*var\(--font-accent\)/);
-  assert.match(css, /\.ramsar \.metric-grid strong \{[^}]*var\(--font-accent\)/);
+  assert.match(css, /\.ramsar \.metric-grid strong \{[^}]*var\(--font-hand\)/);
+  assert.match(css, /\.resources-ramsar-stats strong \{[^}]*var\(--font-hand\)/);
+  assert.match(css, /--font-title: var\(--font-body\)/);
   assert.match(css, /\.impact-owens figcaption h3 \{[^}]*var\(--font-accent\)[^}]*font-weight: 400/);
   assert.doesNotMatch(css, /Kalam/i);
 });
@@ -216,7 +218,7 @@ test("keeps the mission photograph, three-line title, and both archive actions",
   const mission = html.match(/<section class="mission"[\s\S]*?<\/section>/)?.[0];
   assert.ok(mission);
   assert.match(mission, /<img[^>]+alt="[^"]+"/);
-  assert.match(mission, /what was lost,<br\/>what continues &amp;<br\/>How can we help/);
+  assert.match(mission, /What was lost,<br\/>what continues &amp;<br\/>how can we help/);
   assert.match(mission, /href="\/resources"/);
   assert.match(mission, /href="\/impact#film"/);
 });
